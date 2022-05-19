@@ -87,6 +87,7 @@ johnBMI = johnWeight / johnHeight ** 2;
 // CODING CHALLENGE 3 //
 ----------------------*/
 
+/*
 let dolphins = (97 + 102 + 91) / 3;
 let koalas = (99 + 95 + 96) / 3;
 
@@ -99,3 +100,12 @@ if (dolphins > koalas && dolphins >= 100) {
 } else {
     console.log("No Winner!");
 }
+*/
+
+/* ---------------------
+// CODING CHALLENGE 4 //
+----------------------*/
+
+let bill = 430
+let tip = (bill >= 50 && bill <= 300) ? bill * 0.15 : bill * 0.2;
+console.log(`The bill was ${bill}, the tip was ${tip}, and the total value is ${bill + tip}`);
