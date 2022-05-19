@@ -1,5 +1,4 @@
-let js = 'amazing';
-if (js === 'amazing') alert('JavaScript is FUN!');
-
-console.log(48 + 23 - 16);
-
+// Values and Variables Assignment
+let country = 'USA';
+let continenct = 'North America';
+let population = 329.5; 
