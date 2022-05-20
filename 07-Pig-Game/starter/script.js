@@ -68,8 +68,8 @@ const changePlayer = function () {
 
 // Declare a winner
 const playerWin = function () {
-  player.classList.remove('player--active');
-  player.classList.add('player--winner');
+  player().classList.remove('player--active');
+  player().classList.add('player--winner');
   btnRoll.classList.add('hidden');
   btnHold.classList.add('hidden');
 };
@@ -84,7 +84,7 @@ const holdScore = function () {
 
   // update display
   totalScore().textContent = totalScores[activePlayer];
-  currentScore().textContent = 0;
+  addScore(0);
   hideDice();
   totalScores[activePlayer] >= 100 ? playerWin() : changePlayer();
 };
