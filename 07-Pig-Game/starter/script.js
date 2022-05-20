@@ -13,13 +13,8 @@ const player = () => document.querySelector(`.player--${activePlayer}`);
 const currentScore = () => document.getElementById(`current--${activePlayer}`);
 const totalScore = () => document.getElementById(`score--${activePlayer}`);
 
-// Init Functions
-const hideDice = function () {
-  imgDice.classList.add('hidden');
-};
-
 // Initialize
-const init = function () {
+function init() {
   currentScores = [0, 0];
   totalScores = [0, 0];
   activePlayer = 0;
@@ -33,49 +28,35 @@ const init = function () {
   players[0].classList.add('player--active');
   btnRoll.classList.remove('hidden');
   btnHold.classList.remove('hidden');
-};
-
-init();
+}
 
 // Dice Roller
-const rollDice = function () {
+function rollDice() {
   const diceRoll = Math.trunc(Math.random() * 6) + 1;
 
   diceRoll !== 1 ? addScore(diceRoll) : changePlayer();
 
   imgDice.src = `dice-${diceRoll}.png`;
   if (imgDice.classList.contains('hidden')) imgDice.classList.remove('hidden');
-};
+}
+
+// Init Functions
+function hideDice() {
+  imgDice.classList.add('hidden');
+}
 
 // Add value to active player's current score.
-const addScore = function (val) {
+function addScore(val) {
   if (val === 0) {
     currentScores[activePlayer] = 0;
   } else {
     currentScores[activePlayer] += val;
   }
   currentScore().textContent = currentScores[activePlayer];
-};
-
-// Change active player
-const changePlayer = function () {
-  addScore((currentScores[activePlayer] = 0));
-  activePlayer = activePlayer === 0 ? 1 : 0;
-
-  for (let i = 0; i < players.length; i++)
-    players[i].classList.toggle('player--active');
-};
-
-// Declare a winner
-const playerWin = function () {
-  player().classList.remove('player--active');
-  player().classList.add('player--winner');
-  btnRoll.classList.add('hidden');
-  btnHold.classList.add('hidden');
-};
+}
 
 // Bank active player's current score to total.
-const holdScore = function () {
+function holdScore() {
   if (currentScores[activePlayer] === 0) return;
 
   // update script
@@ -87,9 +68,29 @@ const holdScore = function () {
   addScore(0);
   hideDice();
   totalScores[activePlayer] >= 100 ? playerWin() : changePlayer();
-};
+}
+
+// Change active player
+function changePlayer() {
+  addScore((currentScores[activePlayer] = 0));
+  activePlayer = activePlayer === 0 ? 1 : 0;
+
+  for (let i = 0; i < players.length; i++)
+    players[i].classList.toggle('player--active');
+}
+
+// Declare a winner
+function playerWin() {
+  player().classList.remove('player--active');
+  player().classList.add('player--winner');
+  btnRoll.classList.add('hidden');
+  btnHold.classList.add('hidden');
+}
 
 // Event Listeners
 btnRoll.addEventListener('click', rollDice);
 btnHold.addEventListener('click', holdScore);
 btnNew.addEventListener('click', init);
+
+// run
+init();
