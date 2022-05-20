@@ -75,7 +75,7 @@ fruitProcessor(2, 3);
 */
 
 /* ------------------ //
-// Coding Challenge 4 //
+// Coding Challenge 5 //
 // ------------------ */
 /*
 const calcAverage = (a, b, c) => (a + b + c) / 3;
@@ -101,7 +101,7 @@ checkWinner(dolphins2, koalas2);
 */
 
 /* ------------------ //
-// Coding Challenge 5 //
+// Coding Challenge 6 //
 // ------------------ */
 
 /*
@@ -119,3 +119,34 @@ let bills = [125, 555, 44];
 let tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
 console.log(tips);
 */
+
+/* ------------------ //
+// Coding Challenge 7 //
+// ------------------ */
+
+const mark = {
+    firstName: 'Mark',
+    lastName: 'Miller',
+    weight: 78,
+    height: 1.69,
+    calcBMI: function () {
+        this.BMI = this.weight / this.height ** 2;
+        return this.BMI;
+    },
+}
+
+const john = {
+    firstName: 'John',
+    lastName: 'Smith',
+    weight: 92,
+    height: 1.95,
+    calcBMI: function () {
+        this.BMI = this.weight / this.height ** 2;
+        return this.BMI;
+    }
+}
+
+// mark.calcBMI();
+// john.calcBMI();
+
+console.log(`John's BMI (${john.BMI}) is ${john.BMI >= mark.BMI ? 'higher' : 'lower'} than Mark's (${mark.BMI})!`)
