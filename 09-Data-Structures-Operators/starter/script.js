@@ -52,6 +52,34 @@ const restaurant = {
   },
 };
 
+/*
+////////////////////////////////////////////////
+const rest1 = { name: 'Capri', numGuests: 0 };
+const rest2 = { name: 'La Piazza', owner: 'Giovanni Rossi' };
+
+// OR assignment operator
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
+
+// NULLish assignment operator (null or undefined)
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+
+// AND assignment operator
+rest1.owner &&= '<ANONYMOUS>'; // Will not set variable to NULLish value
+rest2.owner &&= '<ANONYMOUS>'; // only assigns if current value is truthy
+
+console.log(rest1);
+console.log(rest2);
+
+///////////////////////////////////////////////
+// Nullish: null and undefined (not 0 or '')
+// When used with && operator, will continue to second operarand
+*/
+
+/*
 ///////////////////////////////////////////////
 // Logical operators
 // Use ANY data type, return ANY data type, can short-circuit
@@ -61,6 +89,7 @@ console.log(undefined || null);
 
 console.log(0 && 'Jonas'); // Returns first value if it is 'falsy'
 restaurant.orderPizza && restaurant.orderPizza('mushroom', 'spinach'); // Works like if statement
+*/
 
 /*
 //////////////////////////////////////////////////
