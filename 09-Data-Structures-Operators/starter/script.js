@@ -52,6 +52,16 @@ const restaurant = {
   },
 };
 
+///////////////////////////////////////////////
+// Logical operators
+// Use ANY data type, return ANY data type, can short-circuit
+console.log(3 || 'Jonas'); // Returns first value if it is 'thruthy'
+console.log('' || 'Jonas');
+console.log(undefined || null);
+
+console.log(0 && 'Jonas'); // Returns first value if it is 'falsy'
+restaurant.orderPizza && restaurant.orderPizza('mushroom', 'spinach'); // Works like if statement
+
 /*
 //////////////////////////////////////////////////
 // Rest pattern
