@@ -26,4 +26,58 @@ const restaurant = {
       close: 24,
     },
   },
+
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
 };
+
+/*
+//////////////////////////////////////////////
+// Destructuring Arrays
+const [starter, main] = restaurant.order(2, 0);
+// console.log(starter, main);
+
+// Nested destructuring
+const nested = [2, 4, [5, 6]];
+// const [i, , j] = nested;
+// console.log(i, j);
+const [i, , [j, k]] = nested;
+console.log(i, j, k);
+
+// Default values
+const [p = 1, q = 1, r = 1] = [8, 9];
+console.log(p, q, r);
+*/
+
+const { name, openingHours, categories } = restaurant;
+// console.log(name, openingHours, categories);
+
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+// console.log(restaurantName, hours, tags);
+
+// Default values
+const {
+  menu = [],
+  starterMenu: starters = [],
+  mainMenu: entrees = [],
+} = restaurant;
+// console.log(menu, starters, entrees);
+
+// Mutating variables
+let a = 111;
+let b = 999;
+const obj = { a: 23, b: 8, c: 14 };
+// {a, b} = obj; // <---- Error, needs parens around expression
+({ a, b } = obj);
+// console.log(a, b);
+
+// Nest objects
+const {
+  fri: { open, close },
+} = openingHours;
+console.log(open, close);
