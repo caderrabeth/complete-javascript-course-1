@@ -55,6 +55,11 @@ const restaurant = {
   },
 };
 
+///////////////////////////////////////////////
+// Working on Strings
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+
 /*
 ///////////////////////////////////////////////
 // Maps
